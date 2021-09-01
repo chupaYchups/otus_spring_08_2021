@@ -1,2 +1,2 @@
-# otus_spring_08_2021
-Домашние задания по курсу Spring 
+otus_spring_08_2021 spring otus course
+Cтудент: Ivan Chupakhin (Иван Чупахин) chupaYchups@gmail.com
