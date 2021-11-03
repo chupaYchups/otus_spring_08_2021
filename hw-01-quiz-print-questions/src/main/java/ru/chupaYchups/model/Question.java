@@ -1,21 +1,22 @@
 package ru.chupaYchups.model;
 
-import lombok.Data;
+import lombok.Builder;
+import lombok.Getter;
 import lombok.NonNull;
+import lombok.Singular;
 
 import java.util.List;
 
-@Data
+@Builder
+@Getter
 public class Question {
     @NonNull
     private final String questionText;
-    @NonNull
-    private final List<String> answerVariantList;
-    @NonNull
-    private final int rightAnswerNum;
+    @Singular("answerVariant")
+    private List<String> answerVariantList;
+    private int rightAnswerNum;
 
     public boolean checkAnswer(int answerNum) {
         return answerNum == rightAnswerNum;
     }
-
 }
