@@ -1,8 +1,10 @@
 package ru.chupaYchups.service;
 
 import org.apache.commons.csv.CSVRecord;
+import org.springframework.stereotype.Component;
 import ru.chupaYchups.model.Question;
 
+@Component
 public class CSVRecordToQuestionConverterImpl implements CSVRecordToQuestionConverter {
     public Question convert(CSVRecord csvRecord) {
         Question.QuestionBuilder questionBuilder = Question.builder();

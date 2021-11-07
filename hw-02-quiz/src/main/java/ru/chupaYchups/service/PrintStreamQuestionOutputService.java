@@ -1,15 +1,22 @@
 package ru.chupaYchups.service;
 
-import lombok.RequiredArgsConstructor;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Value;
+import org.springframework.stereotype.Service;
 import ru.chupaYchups.model.Question;
 import java.io.PrintStream;
 import java.util.List;
 import java.util.stream.IntStream;
 
-@RequiredArgsConstructor
+@Service
 public class PrintStreamQuestionOutputService implements QuestionOutputService {
 
     private final PrintStream printStream;
+
+    @Autowired
+    public PrintStreamQuestionOutputService(@Value("#{T(java.lang.System).out}")PrintStream printStream) {
+        this.printStream = printStream;
+    }
 
     @Override
     public void printQuestion(Question question) {
