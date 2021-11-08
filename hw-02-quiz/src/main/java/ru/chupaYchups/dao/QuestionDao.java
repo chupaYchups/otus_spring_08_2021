@@ -1,5 +1,4 @@
 package ru.chupaYchups.dao;
-
 import ru.chupaYchups.model.Question;
 
 import java.io.IOException;

@@ -4,19 +4,24 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Service;
 import java.io.InputStream;
+import java.util.Scanner;
 
 @Service
-public class InputStreamAnswerInputService implements AnswerInputService {
+public class SystemInputService implements InputService {
 
     private final InputStream inputStream;
+    private Scanner scanner;
 
     @Autowired
-    public InputStreamAnswerInputService(@Value("#{T(java.lang.System).in}") InputStream inputStream) {
+    public SystemInputService(@Value("#{T(java.lang.System).in}") InputStream inputStream) {
         this.inputStream = inputStream;
     }
 
     @Override
     public String obtainAnswer() {
-        return null;
+        if (scanner == null) {
+            scanner = new Scanner(inputStream);
+        }
+        return scanner.nextLine();
     }
 }

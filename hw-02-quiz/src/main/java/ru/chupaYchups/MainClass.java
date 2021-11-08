@@ -14,6 +14,6 @@ public class MainClass {
     public static void main(String[] args) throws IOException {
         AnnotationConfigApplicationContext context = new AnnotationConfigApplicationContext(MainClass.class);
         QuizManagerService quizManagerService = context.getBean(QuizManagerService.class);
-        quizManagerService.printQuestions();
+        quizManagerService.startQuiz();
     }
 }
